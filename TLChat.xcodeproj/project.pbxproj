@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07F820381E5DFB12001194D8 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F820371E5DFB12001194D8 /* libmp3lame.a */; };
 		C2028D1B1C8D1A3D0060E271 /* TLFriendDetailSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2028D1A1C8D1A3D0060E271 /* TLFriendDetailSettingViewController.m */; };
 		C2028D1E1C8D1D360060E271 /* TLFriendHelper+Detail.m in Sources */ = {isa = PBXBuildFile; fileRef = C2028D1D1C8D1D360060E271 /* TLFriendHelper+Detail.m */; };
 		C2028D281C8D2CF20060E271 /* TLNewFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2028D271C8D2CF20060E271 /* TLNewFriendViewController.m */; };
@@ -316,6 +317,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07F820361E5DFB12001194D8 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		07F820371E5DFB12001194D8 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		28C098D007CC6D63F81358AB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		75B8BEA1E816AE40E5E1CBA0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2028D191C8D1A3D0060E271 /* TLFriendDetailSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLFriendDetailSettingViewController.h; sourceTree = "<group>"; };
@@ -917,6 +920,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C20907451C97ED0700AB87A5 /* JSPatch.framework in Frameworks */,
+				07F820381E5DFB12001194D8 /* libmp3lame.a in Frameworks */,
 				C2AF1FAA1C6B78F600617D98 /* WebKit.framework in Frameworks */,
 				CB742FE0D4D07E4FA91FF04C /* libPods.a in Frameworks */,
 			);
@@ -939,6 +943,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07F820351E5DFB12001194D8 /* lame */ = {
+			isa = PBXGroup;
+			children = (
+				07F820361E5DFB12001194D8 /* lame.h */,
+				07F820371E5DFB12001194D8 /* libmp3lame.a */,
+			);
+			path = lame;
+			sourceTree = "<group>";
+		};
 		08A21825AD082DD43B30E2DA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2673,6 +2686,7 @@
 		C2D500E81C565CC50088997C /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				07F820351E5DFB12001194D8 /* lame */,
 				C20907431C97ED0000AB87A5 /* JSPatch */,
 			);
 			path = Vendors;
@@ -3184,7 +3198,8 @@
 				TargetAttributes = {
 					C2097EE21C52326500163B5C = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 8ZE6MPGQ6N;
+						DevelopmentTeam = 293VM2BUQ6;
+						ProvisioningStyle = Manual;
 					};
 					C2097EFB1C52326500163B5C = {
 						CreatedOnToolsVersion = 7.2;
@@ -3703,6 +3718,8 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 293VM2BUQ6;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TLChat/Extensions/Vendors/JSPatch",
@@ -3711,9 +3728,14 @@
 				INFOPLIST_FILE = TLChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TLChat/Extensions/Vendors/lame",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tripleL.TLChat0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c297115c-bd7e-4110-bca0-100816b16b27";
+				PROVISIONING_PROFILE_SPECIFIER = CodeResignDevelopment;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -3727,6 +3749,8 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TLChat/Extensions/Vendors/JSPatch",
@@ -3735,6 +3759,10 @@
 				INFOPLIST_FILE = TLChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TLChat/Extensions/Vendors/lame",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tripleL.TLChat0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
